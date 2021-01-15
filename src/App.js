@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import React from "react";
+import {MovieList} from "./components/MovieList/MovieList";
+import {NavLink, Redirect, Route, Switch} from "react-router-dom";
+import {MoviePageWithRouter} from "./components/MoviePage/MoviePageContainer";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <button><NavLink to={"/home"}>Home</NavLink></button>
+        <Switch>
+            <Redirect exact from='/' to='/home'/>
+            <Route path={"/home"} render={()=><MovieList />}/>
+            <Route path={"/movie/:id?"} render={()=><MoviePageWithRouter />}/>
+            <Route path='*' render={()=> <div>PAGE NOT FOUND</div>}/>
+        </Switch>
     </div>
   );
 }

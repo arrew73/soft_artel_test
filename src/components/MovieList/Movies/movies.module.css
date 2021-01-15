@@ -1,0 +1,19 @@
+.movies {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-basis: 31%;
+    margin-left: 50px;
+}
+
+.moviesItem {
+    flex-basis: 10%;
+}
+
+.moviesItemText {
+    width: 130px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

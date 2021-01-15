@@ -1,0 +1,15 @@
+.movieInfo {
+    width: 40%;
+    margin: auto;
+}
+
+.movieInfo_text {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width:970px) {
+    img {
+        width: 150px;
+    }
+}
